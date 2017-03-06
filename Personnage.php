@@ -5,7 +5,7 @@
 class Personnage
 {
   public $vie = 80;
-  public $atq = 20;
+  public $atq = 50;
   public $nom;
 
   public function __construct($nom) {
@@ -22,6 +22,11 @@ class Personnage
 
   public function mort() {
     return $this->vie <= 0;
+  }
+
+  public function attaque($cible) {
+
+    $cible->vie -= $this->atq;
   }
 
 }
